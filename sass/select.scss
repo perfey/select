@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+
+/*变量*/
+$dropdown-width: 60px !default;					//下拉组件的默认宽度
+$drop-color: #000000 !default;					//整个组件默认颜色
+$drop-font-color: #000000 !default;				//select文字默认颜色
+$drop-font-size: 14px !default;					//select字体大小
+$drop-border-color: #cccccc !default;			//边框默认颜色
+$drop-padding: 0px !default;					//sleect内边距
+$drop-height: 40px !default;					//select高度
+$drop-lineheight: 40px !default;				//select行高
+$drop-width: 100% !default;						//select宽度
+$drop-disabled-fontcolor: #999999 !default;		//禁掉的select的字体颜色
+$open-drop-borderbottom: 0 none !default;		//下拉打开后的底边框
+$select-result-margin: 0 0 0 10px !default;		//select左侧文字的边距
+$caret-color: #000000 !default;					//三角默认颜色
+$caret-width: 4px !default;						//三角默认大小
+$caret-margin: 18px 5px 0 !default;				//三角默认外边距
+$caret-disabled-color: #999999 !default;		//禁掉的select的三角颜色
+$menu-padding: 0 0 0 0 !default;				//下拉框的内边距
+$menu-margin: -1px 0 0 0 !default;				//下拉框距离顶部的距离
+$menu-height: auto !default;					//下拉框的高度
+$menu-width: 100% !default;						//下拉框的宽度
+$menu-maxheight: 2000px !default;				//下拉框的高度
+$menu-font-size: 14px !default;					//下拉框内的字体大小
+$menu-border-color: #cccccc !default;			//边框默认颜色
+$menu-border-top: 0 none !default;				//下拉框上边框的样式
+$menu-background-color: #ffffff !default;		//下拉框背景色
+$menu-overflow: auto !default;					//下拉框高度不够时是否出现滚动条
+$li-display: block !default;					//下拉框列的块属性
+$li-float: none !default;						//下拉框列是否浮动
+$li-width: auto !default;						//下拉框列的宽度
+$li-widthIe7: auto !default;					//下拉框列的IE7宽度
+$li-a-padding: 0px 10px !default;				//下拉列表内边距
+$li-a-height: 30px !default;					//下拉列表高
+$li-a-lineheight: 30px !default;				//下拉列表行高
+$li-a-fontcolor: #333333 !default;				//下拉框内字体颜色
+$li-ahover-fontcolor: #262626 !default;			//下拉框内hover字体颜色
+$li-ahover-backgroundcolor: #f0f0f0 !default;	//下拉框内hover背景色
+$li-aselect-fontcolor: #262626 !default;		//下拉框内hover字体颜色
+$li-aselect-backgroundcolor: #f0f0f0 !default;	//下拉框内hover背景色
+$li-select: block !default;						//下拉框选中后默认显示
+
+
+.dropdown {
+	position: relative;
+	color: $drop-color;
+	width: $dropdown-width;
+}
+.dropdown a {
+	text-decoration: none;
+	background: transparent;
+	outline: none;
+}
+.dropdown .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	float: right;
+	margin: $caret-margin;
+	vertical-align: middle;
+	border-top: $caret-width solid $caret-color;
+	border-right: $caret-width solid transparent;
+	border-left: $caret-width solid transparent;
+	transition: all 0.3s ease 0s;
+}
+.dropdown .select-result {
+	margin: $select-result-margin;
+	*float: left;
+}
+.dropdown-toggle {
+	height: $drop-height;
+	line-height: $drop-lineheight;
+	color: $drop-font-color;
+	padding: $drop-padding;
+	width: $drop-width;
+	font-size: $drop-font-size;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	border: 1px solid $drop-border-color;
+	text-decoration: none;
+	text-align: left;
+}
+.dropdown-toggle:focus {
+	text-decoration: none;
+	color: inherit;
+}
+.dropdown-toggle:hover {
+	text-decoration: none;
+	color: inherit;
+	cursor: default;
+}
+.open {
+	.dropdown-toggle {
+		border-bottom: $open-drop-borderbottom;
+		.caret {
+			transform: rotate(180deg);
+		}
+	}
+	.dropdown-toggle.disabled {
+		.caret {
+			transform: rotate(0deg);
+		}
+	}
+}
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	height: $menu-height;
+	padding: $menu-padding;
+	margin: $menu-margin;
+	width: $menu-width;
+	max-height: $menu-maxheight;
+	list-style: none;
+	font-size: $menu-font-size;
+	text-align: left;
+	background-color: $menu-background-color;
+	border: 1px solid $menu-border-color;
+	border-top: 0 none;
+	background-clip: padding-box;
+	overflow: $menu-overflow;
+}
+.dropdown-menu > li {
+	display: $li-display;
+	width: $li-width;
+	*width: $li-widthIe7;
+	float: $li-float;
+}
+.dropdown-menu > li > a {
+	display: block;
+	padding: $li-a-padding;
+	clear: both;
+	font-weight: normal;
+	height: $li-a-height;
+	line-height: $li-a-lineheight;
+	color: $li-a-fontcolor;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	/* *width: 60%;
+	*display: inline-block; */
+}
+.dropdown-menu > li > a:hover,.dropdown-menu > li > a:focus {
+	text-decoration: none;
+	outline: none;
+	color: $li-ahover-fontcolor;
+	background-color: $li-ahover-backgroundcolor;
+}
+.dropdown-menu > li .selected {
+	text-decoration: none;
+	outline: none;
+	color: $li-aselect-fontcolor;
+	background-color: $li-aselect-backgroundcolor;
+	display: $li-select;
+}
+.dropdown-menu > .active > a,.dropdown-menu > .active > a:hover,.dropdown-menu > .active > a:focus {
+	color:#ffffff;
+	text-decoration:none;
+	outline:0;
+	background-color:#428bca;
+}
+.dropdown-menu > .disabled > a,.dropdown-menu > .disabled > a:hover,.dropdown-menu > .disabled > a:focus {
+	color: #777777;
+}
+.dropdown-menu > .disabled > a:hover,.dropdown-menu > .disabled > a:focus {
+	text-decoration:none;
+	background-color:transparent;
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	cursor:not-allowed;
+}
+.dropdown .dropdown-toggle.disabled {
+	color: $drop-disabled-fontcolor;
+}
+.dropdown .disabled .caret {
+	border-top: $caret-width solid $caret-disabled-color;
+}
+.dropdown.open > .dropdown-menu {
+	display:block;
+}
+.dropdown.open {
+	z-index:1000;
+}

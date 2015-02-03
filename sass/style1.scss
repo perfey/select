@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/**
+ * 公共样式Begin
+ **/
+.body {
+	margin: 0;
+	font-size: 100%;
+	font-family: "Helvetica Neue",Arial,"Microsoft Yahei",Helvetica,sans-serif,Lato;
+	font-weight: normal;
+	line-height: 1;
+}
+.m-c {
+	width: 320px;
+	margin: 40px auto;
+}
+.dropdown {
+	float: left;
+	margin-right: 25px;
+}
+/**
+ * 公共样式End
+ **/
+
+
+/**
+ * 引入组件的样式 并覆盖默认设置
+ **/
+$dropdown-width: 90px;		//重置选择框的宽度
+$menu-maxheight: 210px;	//重置下拉框的最大高度
+@import "select.scss";

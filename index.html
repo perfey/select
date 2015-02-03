@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>下拉选择组件</title>
+<meta name="keyword" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<style type="text/css">
+	.tips span {
+		margin-right: 46px;
+	}
+	.result {
+		margin-top: 240px;
+	}
+	.r-1 {
+		height: 30px;
+	}
+	.r-1 span {
+		display: inline-block;
+		width: 50px;
+		margin-right: 28px;
+	}
+	.r-3 {
+		margin-bottom: 10px;
+	}
+	.r-3 .s-1, .r-3 .s-2 {
+		text-align: center;
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		width: 40px;
+		border: 1px solid #ccc;
+    	color: #333;
+    	border-radius: 4px;
+    	cursor: pointer;
+    	margin-right: 33px;
+	}
+	.r-4, .r-5 {
+		position: relative;
+		height: 30px;
+	}
+	.s-0 {
+		position: absolute;
+		top: 0;
+	}
+	.r-4 .s-0 {
+		left: -53px;
+	}
+	.r-5 .s-0 {
+		left: -45px;
+	}
+	.r-4 .s-1, .r-4 .s-2, .r-5 .s-1, .r-5 .s-2 {
+		display: inline-block;
+		width: 50px;
+		margin-right: 28px;
+	}
+</style>
+</head>
+<body>
+<div class="m-c">
+	<div class="tips"><span>click</span><span>hover</span><span>disabled</span></div>
+	<div class="clearfix">
+		<div class="dropdown c-1">
+		    <a id="city1" href="javascript:void(0)" class="dropdown-toggle select-box" data-target="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        <span class="select-result js-text">市区</span>
+		        <span class="caret"></span>
+		    </a>
+		    <ul class="dropdown-menu" role="menu" data-mate="city1">
+		        <li><a tabindex="-1" data-value="1" href="#">广州</a></li>
+		        <li><a tabindex="-1" data-value="2" href="#">深圳</a></li>
+		        <li><a tabindex="-1" data-value="3" href="#">中山</a></li>
+		        <li><a tabindex="-1" data-value="4" href="#">东莞</a></li>
+		        <li><a tabindex="-1" data-value="5" href="#">惠州</a></li>
+		        <li><a tabindex="-1" data-value="6" href="#">佛山</a></li>
+		        <li><a tabindex="-1" data-value="7" href="#">珠海</a></li>
+		    </ul>
+		</div>
+		<div class="dropdown c-2" data-type="hover">
+		    <a id="city2" href="javascript:void(0)" class="dropdown-toggle select-box" data-target="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-type="hover">
+		        <span class="select-result js-text">市区</span>
+		        <span class="caret"></span>
+		    </a>
+		    <ul class="dropdown-menu" role="menu" data-mate="city2">
+		        <li><a tabindex="-1" data-value="1" href="#">广州</a></li>
+		        <li><a tabindex="-1" data-value="2" href="#">深圳</a></li>
+		        <li><a tabindex="-1" data-value="3" href="#">中山</a></li>
+		        <li><a tabindex="-1" data-value="4" href="#">东莞</a></li>
+		        <li><a tabindex="-1" data-value="5" href="#">惠州</a></li>
+		        <li><a tabindex="-1" data-value="6" href="#">佛山</a></li>
+		        <li><a tabindex="-1" data-value="7" href="#">珠海</a></li>
+		    </ul>
+		</div>
+		<div class="dropdown c-3">
+		    <a id="city3" href="javascript:void(0)" class="dropdown-toggle select-box disabled" data-target="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        <span class="select-result js-text">市区</span>
+		        <span class="caret"></span>
+		    </a>
+		    <ul class="dropdown-menu" role="menu" data-mate="city3">
+		        <li><a tabindex="-1" data-value="1" href="#">广州</a></li>
+		        <li><a tabindex="-1" data-value="2" href="#">深圳</a></li>
+		        <li><a tabindex="-1" data-value="3" href="#">中山</a></li>
+		        <li><a tabindex="-1" data-value="4" href="#">东莞</a></li>
+		        <li><a tabindex="-1" data-value="5" href="#">惠州</a></li>
+		        <li><a tabindex="-1" data-value="6" href="#">佛山</a></li>
+		        <li><a tabindex="-1" data-value="7" href="#">珠海</a></li>
+		    </ul>
+		</div>
+	</div>
+	<div class="result">
+		<div class="r-1">
+			<span class="s-1"></span>
+			<span class="s-2"></span>
+		</div>
+		<div class="r-2">
+			<span class="b-1"></span>
+			<span class="b-1"></span>
+		</div>
+		<div class="r-3">
+			<span class="s-1">Get</span>
+			<span class="s-2">Get</span>
+		</div>
+		<div class="r-4">
+			<span class="s-0">Value:</span>
+			<span class="s-1"></span>
+			<span class="s-2"></span>
+		</div>
+		<div class="r-5">
+			<span class="s-0">Text:</span>
+			<span class="s-1"></span>
+			<span class="s-2"></span>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script type="text/javascript">
+	$(".c-1 .dropdown-menu").on("click", "a", function() {
+		var value = $(this).data().value;
+		$(".r-1 .s-1").html(value);
+	});
+	$(".c-2 .dropdown-menu").on("click", "a", function() {
+		var value = $(this).data().value;
+		$(".r-1 .s-2").html(value);
+	});
+	$(".r-3").on("click", ".s-1", function() {
+		console.log($("#city1 .select-result").data().value);
+		$(".r-4 .s-1").html($("#city1").data().value);
+		$(".r-5 .s-1").html($("#city1").data().text);
+	});
+	$(".r-3").on("click", ".s-2", function() {
+		console.log($("#city2 .select-result").data().value);
+		$(".r-4 .s-2").html($("#city2").data().value);
+		$(".r-5 .s-2").html($("#city2").data().text);
+	});
+</script>
+</body>
+</html>

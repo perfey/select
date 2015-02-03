@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/**
+ * 公共样式Begin
+ **/
+.body {
+	margin: 0;
+	font-size: 100%;
+	font-family: "Helvetica Neue",Arial,"Microsoft Yahei",Helvetica,sans-serif,Lato;
+	font-weight: normal;
+	line-height: 1;
+}
+.m-c {
+	width: 320px;
+	margin: 40px auto;
+}
+.dropdown {
+	float: left;
+	margin-right: 25px;
+}
+.clearfix {
+	zoom:1;
+	&:after {
+		content: '\200B';
+		display: block;
+		clear: both;
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+	}
+}
+/**
+ * 公共样式End
+ **/
+
+
+/**
+ * 引入组件的样式
+ **/
+@import "select.scss";

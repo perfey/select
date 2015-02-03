@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/**
+ * 公共样式Begin
+ **/
+.body {
+	margin: 0;
+	font-size: 100%;
+	font-family: "Helvetica Neue",Arial,"Microsoft Yahei",Helvetica,sans-serif,Lato;
+	font-weight: normal;
+	line-height: 1;
+}
+.m-c {
+	width: 320px;
+	margin: 40px auto;
+}
+.dropdown {
+	float: left;
+	margin-right: 25px;
+}
+/**
+ * 公共样式End
+ **/
+
+
+/**
+ * 引入组件的样式 并覆盖默认设置
+ **/
+$dropdown-width: 300px;					//重置下拉组件的宽度
+$drop-height: 42px;						//select高度
+$drop-lineheight: 42px;					//select行高
+$drop-width: 100%;						//select宽度
+$select-result-margin: 0 0 0 20px;		//select左侧文字的边距
+$menu-width: 100%;						//下拉框的宽度
+$caret-width: 6px;						//三角大小
+$caret-margin: 19px 8px 0;				//三角默认外边距
+$li-a-height: 42px;						//下拉列表高
+$li-a-lineheight: 42px;					//下拉列表行高
+$li-a-padding: 0px 20px !default;		//下拉列表内边距
+$li-select: none;						//下拉框选中后隐藏
+@import "select.scss";

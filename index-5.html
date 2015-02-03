@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>下拉选择组件</title>
+<meta name="keyword" content="">
+<meta name="description" content="">
+<link rel="stylesheet" type="text/css" href="css/style5.css">
+</head>
+<body>
+<div class="m-c">
+	<div class="dropdown" data-type="hover">
+        <a id="insure" href="javascript:void(0)" class="dropdown-toggle select-box" data-type="hover" data-target="#" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="border-box">
+                <span class="select-result js-text">延长一年（共保修两年）</span>
+                <span class="caret"></span>
+            </span>
+        </a>
+        <ul class="dropdown-menu" role="menu" data-mate="insure">
+            <li><a class="selected" data-value="1" tabindex="-1" href="#">延长一年（共保修两年）</a></li>
+            <li><a tabindex="-1" data-value="2" href="#">延长两年（共保修三年）</a></li>
+            <li><a tabindex="-1" data-value="3" href="#">延长三年（共保修四年）</a></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script type="text/javascript">
+    $(".dropdown").on("click", ".dropdown-toggle", function() {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).data().value = "";
+            $(this).data().text = "";
+            return false;
+        } else {
+            $(this).next().find("a.selected").click();
+        }
+    });
+</script>
+</body>
+</html>

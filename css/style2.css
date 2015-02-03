@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/**
+ * 公共样式Begin
+ **/
+.body {
+  margin: 0;
+  font-size: 100%;
+  font-family: "Helvetica Neue",Arial,"Microsoft Yahei",Helvetica,sans-serif,Lato;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.m-c {
+  width: 320px;
+  margin: 40px auto;
+}
+
+.dropdown {
+  float: left;
+  margin-right: 25px;
+}
+
+/**
+ * 公共样式End
+ **/
+/**
+ * 引入组件的样式 并覆盖默认设置
+ **/
+/*变量*/
+.dropdown {
+  position: relative;
+  color: black;
+  width: 258px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  background: transparent;
+  outline: none;
+}
+
+.dropdown .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  float: right;
+  margin: 19px 8px 0;
+  vertical-align: middle;
+  border-top: 6px solid black;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.dropdown .select-result {
+  margin: 0 0 0 10px;
+  *float: left;
+}
+
+.dropdown-toggle {
+  height: 42px;
+  line-height: 42px;
+  color: black;
+  padding: 0px;
+  width: 100%;
+  font-size: 14px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  text-align: left;
+}
+
+.dropdown-toggle:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown-toggle:hover {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+.open .dropdown-toggle {
+  border-bottom: 0 none;
+}
+.open .dropdown-toggle .caret {
+  transform: rotate(180deg);
+}
+.open .dropdown-toggle.disabled .caret {
+  transform: rotate(0deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  height: auto;
+  padding: 0 0 0 0;
+  margin: -1px 0 0 0;
+  width: 100%;
+  max-height: 2000px;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-top: 0 none;
+  background-clip: padding-box;
+  overflow: auto;
+}
+
+.dropdown-menu > li {
+  display: inline-block;
+  width: 50%;
+  *width: 49%;
+  float: left;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 0px 10px;
+  clear: both;
+  font-weight: normal;
+  height: 42px;
+  line-height: 42px;
+  color: #333333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* *width: 60%;
+  *display: inline-block; */
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  outline: none;
+  color: #262626;
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu > li .selected {
+  text-decoration: none;
+  outline: none;
+  color: #262626;
+  background-color: #f0f0f0;
+  display: block;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: #428bca;
+}
+
+.dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  color: #777777;
+}
+
+.dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: not-allowed;
+}
+
+.dropdown .dropdown-toggle.disabled {
+  color: #999999;
+}
+
+.dropdown .disabled .caret {
+  border-top: 6px solid #999999;
+}
+
+.dropdown.open > .dropdown-menu {
+  display: block;
+}
+
+.dropdown.open {
+  z-index: 1000;
+}
